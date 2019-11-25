@@ -1,0 +1,222 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{latexsym}
+\usepackage{amsfonts}
+\usepackage[normalem]{ulem}
+\usepackage{soul}
+\usepackage{array}
+\usepackage{amssymb}
+\usepackage{extarrows}
+\usepackage{graphicx}
+\usepackage[backend=biber,
+style=numeric,
+sorting=none,
+isbn=false,
+doi=false,
+url=false,
+]{biblatex}\addbibresource{bibliography.bib}
+
+\usepackage{subfig}
+\usepackage{wrapfig}
+\usepackage{wasysym}
+\usepackage{enumitem}
+\usepackage{adjustbox}
+\usepackage{ragged2e}
+\usepackage[svgnames,table]{xcolor}
+\usepackage{tikz}
+\usepackage{longtable}
+\usepackage{changepage}
+\usepackage{setspace}
+\usepackage{hhline}
+\usepackage{multicol}
+\usepackage{tabto}
+\usepackage{float}
+\usepackage{multirow}
+\usepackage{makecell}
+\usepackage{fancyhdr}
+\usepackage[toc,page]{appendix}
+\usepackage[hidelinks]{hyperref}
+\usetikzlibrary{shapes.symbols,shapes.geometric,shadows,arrows.meta}
+\tikzset{>={Latex[width=1.5mm,length=2mm]}}
+\usepackage{flowchart}\usepackage[paperheight=11.69in,paperwidth=8.27in,left=1.0in,right=1.0in,top=1.0in,bottom=1.0in,headheight=1in]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\TabPositions{0.5in,1.0in,1.5in,2.0in,2.5in,3.0in,3.5in,4.0in,4.5in,5.0in,5.5in,6.0in,}
+
+\urlstyle{same}
+
+
+ %%%%%%%%%%%%  Set Depths for Sections  %%%%%%%%%%%%%%
+
+% 1) Section
+% 1.1) SubSection
+% 1.1.1) SubSubSection
+% 1.1.1.1) Paragraph
+% 1.1.1.1.1) Subparagraph
+
+
+\setcounter{tocdepth}{5}
+\setcounter{secnumdepth}{5}
+
+
+ %%%%%%%%%%%%  Set Depths for Nested Lists created by \begin{enumerate}  %%%%%%%%%%%%%%
+
+
+\setlistdepth{9}
+\renewlist{enumerate}{enumerate}{9}
+		\setlist[enumerate,1]{label=\arabic*)}
+		\setlist[enumerate,2]{label=\alph*)}
+		\setlist[enumerate,3]{label=(\roman*)}
+		\setlist[enumerate,4]{label=(\arabic*)}
+		\setlist[enumerate,5]{label=(\Alph*)}
+		\setlist[enumerate,6]{label=(\Roman*)}
+		\setlist[enumerate,7]{label=\arabic*}
+		\setlist[enumerate,8]{label=\alph*}
+		\setlist[enumerate,9]{label=\roman*}
+
+\renewlist{itemize}{itemize}{9}
+		\setlist[itemize]{label=$\cdot$}
+		\setlist[itemize,1]{label=\textbullet}
+		\setlist[itemize,2]{label=$\circ$}
+		\setlist[itemize,3]{label=$\ast$}
+		\setlist[itemize,4]{label=$\dagger$}
+		\setlist[itemize,5]{label=$\triangleright$}
+		\setlist[itemize,6]{label=$\bigstar$}
+		\setlist[itemize,7]{label=$\blacklozenge$}
+		\setlist[itemize,8]{label=$\prime$}
+
+\setlength{\topsep}{0pt}\setlength{\parindent}{0pt}
+
+ %%%%%%%%%%%%  This sets linespacing (verticle gap between Lines) Default=1 %%%%%%%%%%%%%%
+
+
+\renewcommand{\arraystretch}{1.3}
+
+\title{Algoritmos Asimétricos }
+\date{}
+
+
+%%%%%%%%%%%%%%%%%%%% Document code starts here %%%%%%%%%%%%%%%%%%%%
+
+
+
+\begin{document}
+
+\maketitle
+\par
+
+David Tito Joaquin Bernal Cortes\par
+
+Corporación Universitaria Minuto de Dios \par
+
+dbernal9@uniminuto.edu.co\par
+
+Facultad de Ingeniería\par
+
+
+\vspace{\baselineskip}
+\section*{1\hspace*{10pt}Introducción}
+\addcontentsline{toc}{section}{1\hspace*{10pt}Introducción}
+{\fontsize{16pt}{19.2pt}\selectfont L\par}os algoritmos asimétricos utilizan diferentes claves para cifrar y descifrar datos. Un ejemplo de cifrado asimétrico es la criptografía de clave pública. La criptografía de clave pública utiliza dos claves que forman un par de claves llamadas clave pública y clave privada. La clave que cifra el texto sin formato no se puede utilizar para descifrar el texto cifrado. La clave pública cifra el texto plano y la clave privada descifra el texto cifrado.\par
+
+
+\vspace{\baselineskip}
+\textbf{Clave pública:}Proporcionada a quienes le envían datos cifrados.\par
+
+\textbf{Clave privada:} Una clave en posesión exclusiva del usuario. Cuando un mensaje de texto sin formato se cifra con la clave pública, solo el poseedor de la clave privada puede descifrar el texto cifrado. Cuando un mensaje de texto sin formato se cifra con la clave privada, cualquiera que tenga la clave pública puede descifrarlo. Existe una certeza absoluta de que el mensaje de texto sin formato se originó con el poseedor de la clave privada. Las claves asimétricas proporcionan autenticación, integridad y no repudio. También pueden respaldar la confidencialidad cuando se utilizan para la gestión de claves.\par
+
+\section*{2\hspace*{10pt}Algoritmos Asimétrico existente:}
+\addcontentsline{toc}{section}{2\hspace*{10pt}Algoritmos Asimétrico existente:}
+\subsection{Diffie-Hellman}
+El algoritmo de intercambio de claves Diffie-Hellman fue publicado por primera vez en 1976 por Whitfield Diffie y Martin Hellman, aunque el algoritmo había sido inventado unos años antes por la agencia de inteligencia del gobierno británico GCHQ pero se mantuvo clasificado. En 2002, Martin Hellman sugirió que el algoritmo fuera renombrado como "El intercambio de claves Diffie-Hellman-Merkle" en reconocimiento de la contribución de Ralph Merkle a la criptografía de clave pública.\par
+
+
+\vspace{\baselineskip}
+El algoritmo de intercambio de claves Diffie-Hellman resuelve el siguiente problema: Alice y Bob quieren compartir una clave secreta para, por ejemplo, un algoritmo de clave simétrica como DES o AES , pero solo pueden comunicarse a través de un canal inseguro que es escuchado por su adversario Eva. Es decir, todos los mensajes enviados entre Alice y Bob son observados por Eve.\par
+
+En la figura siguiente se muestra un ejemplo de funcionamiento del protocolo Diffie-Hellman.\par
+
+
+\vspace{\baselineskip}
+
+\vspace{\baselineskip}
+Los valores de $``$p$"$  y $``$g$"$  son públicos y cualquier atacante puede conocerlos, pero esto no supone una vulnerabilidad. Aunque un atacante conociese dichos valores y capturara los dos mensajes enviados entre las máquinas A y B, no sería capaz de averiguar la clave secreta. A continuación se muestra la información capturada por un atacante en el escenario de la Figura 46:\par
+
+
+\vspace{\baselineskip}
+(ga mod p) = 8 $ \rightarrow $  (5a mod 23) = 8\par
+
+(gb mod p) = 19 $ \rightarrow $  (5b mod 23) = 19\par
+
+
+\vspace{\baselineskip}
+A partir de las ecuaciones anteriores, intentar calcular los valores de $``$a$"$  y $``$b$"$  es lo que se conoce como el problema del algoritmo discreto, un problema que se cree computacionalmente intratable y cuya notación es la siguiente:\par
+
+
+\vspace{\baselineskip}
+a = log discg (ga mod p) = log disc 5 (8)\par
+
+b = log discg (gb mod p) = log disc 5 (19)\par
+
+
+\vspace{\baselineskip}
+Con los valores del ejemplo sí que es posible encontrar la solución, ya que se ha escogido un número primo $``$p$"$  muy pequeño (p = 23), y se sabe que $``$a$"$  y $``$b$"$  son menores que $``$p$"$ . Por lo tanto, para obtener los valores secretos en este ejemplo, un atacante tendría que probar sólo 22 posibles valores.\par
+
+
+\vspace{\baselineskip}
+Por suerte, las implementaciones actuales del protocolo Diffie-Hellman utilizan números primos muy grandes, lo que impide a un atacante calcular los valores de $``$a$"$  y $``$b$"$ . El valor $``$g$"$  no necesita ser grande, y en la práctica su valor es 2 ó 5. En el RFC 3526 aparecen publicados los números primos que deben utilizarse. A modo de ejemplo, se facilita aquí el número primo de 1024 bytes propuesto. El valor $``$g$"$  utilizado es 2:\par
+
+
+\vspace{\baselineskip}
+p = 28192 – 28128 – 1 + 264 x ((28062 pi) + 4743158)\par
+
+\subsection{DSA}
+(Digital Signature Algorithm en español Algoritmo de Firma Digital) es un estándar del Gobierno Federal de los Estados Unidos de América o FIPS para firmas digitales. Fue un algoritmo propuesto por el Instituto Nacional de Normas y Tecnología de los Estados Unidos para su uso en su Estándar de Firma Digital (DSS), especificado en el FIPS 186. DSA se hizo publico el 30 de Agosto de 1991, este algoritmo como su nombre lo indica, sirve para firmar y no para cifrar informacion. Una desventaja de este algoritmo es que requiere mucho mas tiempo de computo que RSA.\par
+
+\par
+
+
+\vspace{\baselineskip}
+\subsection{Cifrado El Gamal}
+El procedimiento de cifrado/descifrado ElGamal se refiere a un esquema de cifrado basado en el problema matemático del logaritmo discreto. Es un algoritmo de criptografía asimétrica basado en la idea de Diffie-Hellman y que funciona de una forma parecida a este algoritmo discreto.\par
+
+El algoritmo de ElGamal puede ser utilizado tanto para generar firmas digitales como para cifrar o descifrar.\par
+
+Fue descrito por Taher Elgamal en 19841​ y se usa en software GNU Privacy Guard, versiones recientes de PGP, y otros sistemas criptográficos. Este algoritmo no está bajo ninguna patente lo que lo hace de uso libre.\par
+
+La seguridad del algoritmo se basa en la suposición que la función utilizada es de un solo sentido debido a la dificultad de calcular un logaritmo discreto.\par
+
+\par
+
+\subsection{Criptografía de curva elíptica}
+Es una variante de la criptografía asimétrica o de clave pública basada en las matemáticas de las curvas elípticas. Sus autores argumentan que la CCE puede ser más rápida y usar claves más cortas que los métodos antiguos —como RSA— al tiempo que proporcionan un nivel de seguridad equivalente. La utilización de curvas elípticas en criptografía fue propuesta de forma independiente por Neal Koblitz y Victor Miller en 1985.\par
+
+\par
+
+
+\vspace{\baselineskip}
+\par
+
+\subsection{Criptosistema de Merkle-Hellman}
+Fue uno de los primeros criptosistemas de llave pública y fue inventado por Ralph Merkle y Martin Hellman en 1978.1​ Aunque sus ideas eran elegantes, y mucho más simples que RSA, no tuvo el mismo éxito que este último, debido a que MH ya fue roto,2​ y además no ofrece funcionalidades para firmar.\par
+
+\par
+
+\par
+
+\subsection{RSA}
+
+\vspace{\baselineskip}
+\section*{3 Objectivos de los algoritmos Asimétricos}
+\addcontentsline{toc}{section}{3 Objectivos de los algoritmos Asimétricos}
+es suministrar la dificultad máxima al proceso de desencriptar los datos sin utilizar la llave exacta garantías  de seguridad de la información en el proceso que se implemente para asegurar la información que circula diariamente por ella, algo que es de suma importancia para los desarrolladores de sistemas pues de ésto depende la confiabilidad que se le ofrezca a los usuarios.\par
+
+\section*{4\hspace*{10pt}Conclusion:}
+\addcontentsline{toc}{section}{4\hspace*{10pt}Conclusion:}
+
+\vspace{\baselineskip}
+Los Algoritmos Asimétricos son uno de los métodos para poder proteger tu información, forma parte de la seguridad informática que cada usuario puede tener, en la información anterior podemos observar que la Algoritmos Asimétricos tiene su historia, y mediante esta podemos observar las diferentes opciones que esta nos otorga para poder cuidar nuestra información, sin embargo, en este laboratorio, me intereso el tema de cifrar archivos con algoritmos complejos ya que logra una mayor confidencialidad.\par
+
+
+\printbibliography
+\end{document}
